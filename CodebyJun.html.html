@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tỏ tình Troll by Junn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #ff69b4;
+        }
+        .button {
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+            transition: all 0.3s;
+        }
+        #acceptButton {
+            background-color: #4CAF50;
+        }
+        #acceptButton:hover {
+            background-color: #45a049; 
+        }
+        #rejectButton {
+            background-color: #d3d3d3; 
+            color: black; 
+        }
+        #rejectButton:hover {
+            background-color: #c0c0c0; 
+        }
+        #message {
+            display: none;
+            margin-top: 20px;
+            font-size: 32px; 
+            color: #ff69b4; 
+        }
+        #note {
+            display: none;
+            margin-top: 20px;
+            font-size: 24px;
+            color: green;
+            border: 2px solid #ff69b4;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cậu có thể hẹn hò với tớ hong??</h1>
+    <button class="button" id="acceptButton">Coáa😍</button>
+    <button class="button" id="rejectButton">Dell 💔</button>
+    <div id="message">Chúc mừng bạn đã tỏ tình thành công!</div>
+    <div id="note">Đồng ý set hẹn hò bên Fb ngay thôii cậu ơii❤️</div>
+    <div id="Facebook">
+        <br>
+        <a id="facebookLink" href="https://www.facebook.com" target="_blank">Vào Facebook ngay tại đây!</a>
+    </div>
+    <script>
+        const rejectButton = document.getElementById('rejectButton');
+        const acceptButton = document.getElementById('acceptButton');
+        const message = document.getElementById('message');
+        const note = document.getElementById('note');
+
+        const rejectMessages = [
+            "Cho cậu suy nghĩ lại đấy!",
+            "Cậu suy nghĩ lại đi🥹",
+            "Ấn lộn hả cậu🥺",
+            "Ấn nút màu xanh kìa 😠",
+            "Tin cho ăn đấm hong? ",
+            "Màu xanh !!!! ",
+            "Bán moe qua Cam giờ 😌 "
+        ];
+
+        rejectButton.addEventListener('click', function() {
+            const randomX = Math.floor(Math.random() * (window.innerWidth - 100));
+            const randomY = Math.floor(Math.random() * (window.innerHeight - 100));
+            rejectButton.style.position = 'absolute';
+            rejectButton.style.left = randomX + 'px';
+            rejectButton.style.top = randomY + 'px';
+
+            const randomIndex = Math.floor(Math.random() * rejectMessages.length);
+            rejectButton.textContent = rejectMessages[randomIndex];
+        });
+
+        acceptButton.addEventListener('click', function() {
+            acceptButton.style.display = 'none';
+            rejectButton.style.display = 'none';
+            message.style.display = 'none';
+
+
+            note.style.display = 'block';
+            note.style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
